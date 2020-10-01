@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        h1 {
+
+            text-align: center;
+
+        }
+
+        table {
+
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+
+
+
+
+    <script>
+
+        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        let dias = 30;
+        let mesIntroducido = prompt("Dime mes:");
+        console.log(mesIntroducido);
+        let anioIntroducido = prompt("Dime año:");
+        let fechaCalendario = new Date(anioIntroducido + "-" + mesIntroducido);
+        let calendario = "";
+        let mes = fechaCalendario.getMonth();
+        let diaSemana = fechaCalendario.getDay();
+        switch (mes) {
+
+            case 0:
+            case 2:
+            case 4:
+            case 6:
+            case 7:
+            case 9:
+            case 11:
+
+                dias = 31;
+
+                break;
+            case 1:
+                //poner aquí lo del bisiesto;
+                dias = 28;
+                break;
+
+
+
+
+
+        }
+
+        calendario += "<h1>" + meses[mes] + " de " + anioIntroducido + "</h1><table>"
+            + "<tr> <td>L</td><td>M</td><td>X</td><td>J</td><td>V</td><td>S</td><td>D</td></tr><tr>"
+
+
+
+
+
+
+        console.log(fechaCalendario);
+
+
+        let contador = 0;
+
+        for (let index = 0; index < diaSemana - 1; index++) {
+            calendario += "<td></td>";
+            contador++;
+        }
+
+        for (let dia = 1; dia <= dias; dia++) {
+
+            if (contador != 7) {
+                calendario += "<td>" + dia + "</td>";
+                contador++;
+            }
+            else {
+
+                calendario += "</tr><tr><td>" + dia + "</td>";
+                contador = 1;
+
+            }
+
+        }
+        console.log(calendario);
+
+        if (contador != 7) {
+
+            for (let i = contador; i < 7; i++) {
+
+                calendario += "<td></td>"
+            }
+
+        }
+
+        calendario += "</tr></table>";
+
+
+
+
+        document.getElementById("body").innerHTML = calendario;
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

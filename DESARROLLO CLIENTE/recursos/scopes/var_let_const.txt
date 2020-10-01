@@ -1,0 +1,85 @@
+
+// Sin declarar.
+// i es una variable del ámbito global y es sobreescrita dentro de la función 
+
+i = "global";
+function f() {
+    i = "local";
+    console.log(i); // local
+}
+f();
+console.log(i); // local
+
+// Declarada.
+// Cada i tiene un ambito diferente
+var i = "global";
+function f() {
+    var i = "local"; // Otra variable local solo para esta función
+    console.log(i); // local
+}
+f();
+console.log(i); // global
+
+
+
+// Declarada
+// Ambito dentro de la funcion
+
+function f() {
+    var i = "local";
+}
+console.log(i); // ReferenceError: i is not defined
+
+// Hoisting
+// Uso de variable sin asignar valor
+
+console.log(i); // undefined
+var i = 1;
+
+
+// Hoisting
+// Uso de variable sin asignar valor
+
+var i; // Variable declarada pero valor no definido
+console.log(i); // undefined
+i = 1;
+console.log(i); // 1
+
+
+// Let ambito de la estructura
+
+let i = 0;
+function f() {
+    i = 1;
+    let j = 2;
+    if(true) {
+        console.log(i); // 1
+        console.log(j); // 2
+    }
+}
+f();
+
+
+// Let ambito de la estructura
+
+function f() {
+    let i = 0;
+    if(true) {
+        let i = 1; // Sería otra variable i solo para el bloque if
+        console.log(i); // 1
+    }
+    console.log(i); // 0
+}
+f();
+
+// Const no admite reasignacion y ambito igual que let
+
+const i = 0;
+i = 1; // TypeError: Assignment to constant variable
+
+// Declarar modo estricto
+
+"use strict";
+x = 3.14;  
+
+

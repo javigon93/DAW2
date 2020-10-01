@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<script>
+
+
+// Let ambito de la estructura
+
+function f() {
+    let i = 0;
+    if(true) {
+        let i = 1; // Sería otra variable i solo para el bloque if
+        console.log(i); // 1
+    }
+    console.log(i); // 0
+}
+f();
+
+
+</script>
+
+</body>
+</html>

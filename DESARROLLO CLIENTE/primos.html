@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Primos</title>
+</head>
+<body>
+    <h1 id="numero"></h1>
+    <p id="tabla"></p>
+
+    <script>
+        let num = prompt("Dime un número");
+        parseInt(num);
+        
+        if (isNaN(num)) {
+            alert("ERROR. El valor no es un número.");
+        } else {
+            document.getElementById("numero").innerHTML = "Primos anteriores al "+num;
+            
+            let mitabla = "";
+            //cuanto divisores a cero tiene
+            let primo = 0;
+            mitabla += "<table border=1>";
+        
+            for (i = 2; i <= num ; i++) {
+                mitabla += "<tr> <td>" + i + "</td>";
+                
+                for (j = 1; j <= i; j++) {
+                    if (i%j == 0) {
+                        primo++;
+                    }
+                }
+                //si solo tiene 2 (el 1 y sí mismo) será primo
+                if (primo <= 2) {
+                    mitabla += " <td style=\"background-color: green; color: white;\">Es primo</td> </tr>";
+                } else {
+                    mitabla += " <td style=\"background-color: red;\">No es primo</td> </tr>";
+                }
+                primo=0;
+            }
+            
+            mitabla += "</table>";
+            document.getElementById("tabla").innerHTML = mitabla;
+        }
+    </script>
+
+</body>
+</html>
+

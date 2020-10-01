@@ -1,0 +1,12 @@
+{
+    "name": "34679/composer",
+    "authors": [
+        {
+            "name": "Javier González",
+            "email": "javigon93@gmail.com"
+        }
+    ],
+    "require": {
+        "mtdowling/jmespath.php": "^2.6"
+    }
+}

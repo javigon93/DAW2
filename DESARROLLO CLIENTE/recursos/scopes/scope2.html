@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<script>
+
+// Declarada.
+// Cada i tiene un ambito diferente
+var i = "global";
+function f() {
+    var i = "local"; // Otra variable local solo para esta función
+    console.log(i); // local
+}
+f();
+console.log(i); // global
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="numero">
+
+
+    </div>
+    <div id="tabla">
+
+
+
+    </div>
+
+    <script>
+
+        function insertarTabla(numTabla) {
+            tablaInvididual = "";
+            for (let i = 0; i <= 10; i++) {
+
+                operacion = i * numTabla;
+                fila = "<tr>" + "<td>" + numTabla + "</td> <td>x</td> <td>" + i + "</td><td> = </td>" + "<td>" + operacion + "</td></tr>";
+
+                tablaInvididual += fila;
+
+            }
+
+            return tablaInvididual;
+
+
+        }
+
+        let respuesta1 = parseInt(prompt("Escribe el primer número"));
+        let respuesta2 = parseInt(prompt("Escribe el segundo número"));
+        if ((isNaN(respuesta1) || isNaN(respuesta2) || respuesta2 < respuesta1)) {
+            alert("No vale el dato");
+        }
+        else {
+            document.getElementById("numero").innerHTML = `<h1>La tablas del ${respuesta1} al ${respuesta2}</h1>`;
+            let miTabla = "";
+            let tablaInterna = "";
+            let contador = 0;
+
+            miTabla = "<table><tr>";
+
+            for (let tabla = respuesta1; tabla <= respuesta2; tabla++) {
+
+                if (contador != 0 && contador % 2 == 0) {
+                    miTabla += "</tr>" + tablaInterna + "<tr>";
+                    tablaInterna = "";
+                }
+
+
+                tablaInterna += "<td><table>";
+                tablaInterna += insertarTabla(tabla) + "</td></table>";
+
+                contador++;
+            }
+            if (contador % 2 != 0) {
+                miTabla += tablaInterna;
+            }
+            else {
+
+                miTabla += "</tr>" + tablaInterna + "<tr>";
+
+
+            }
+
+            miTabla += "</table>";
+
+
+
+           
+            
+        }
+    </script>
+
+
+</body>
+
+</html>

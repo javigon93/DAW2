@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        .contenedor {
+            display: grid;
+            grid-template-areas:
+                "superior superior superior"
+                "centros-i centros centros"
+                "centros-i centroi centroi-d"
+                "centros-i centroi centroi-d";
+                border: 1px black solid;
+        }
+
+        .superior {
+           border:inherit;
+            grid-area: superior;
+        }
+
+        .centros-i {border:inherit;
+            grid-area: centros-i;
+        }
+
+        .centros {border:inherit;
+            grid-area: centros;
+        }
+
+        .centros-d {border:inherit;
+            grid-area: centros-d;
+        }
+
+        .centroi-i {border:inherit;
+            grid-area: centroi-i;
+        }
+
+        .centroi {border:inherit;
+
+            grid-area: centroi;
+
+
+        }
+
+        .centroi-d {border:inherit;
+
+            grid-area: centroi-d;
+            
+
+        }
+
+        .inferior {border:inherit;
+
+            grid-area: inferior;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <img class=superior src="./img/CapturaA.png" alt="" >
+        <img class=centros-i src="C:\Users\34679\Pictures/fotoNerea.jpg" alt="" >
+        <img class=centros src="C:\Users\34679\Pictures/logo.png" alt="" >
+        <img class=centroi src="C:\Users\34679\Pictures/lol.png" alt="" >
+        <img class=centroi-d src="C:\Users\34679\Pictures/fotoNerea.jpg" alt="" height="auto">
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

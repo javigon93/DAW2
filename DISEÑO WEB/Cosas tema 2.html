@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .contenedor {
+                display: grid;
+                grid-template-areas:
+                  "cabecera cabecera cabecera cabecera cabecera" /* Te inventas que hay 5 columnas...*/
+                  "lateral-izquierdo cuerpo cuerpo cuerpo lateral-derecho"
+                  "pie pie pie pie pie";
+            }
+ 
+            .cabecera {
+                grid-area: cabecera;
+            }
+ 
+            .cuerpo {
+                grid-area: cuerpo;
+            }
+ 
+            .lateral-izquierdo {
+                grid-area: lateral-izquierdo;
+            }
+ 
+            .lateral-derecho {
+                grid-area: lateral-derecho;
+            }
+ 
+            .pie {
+                grid-area: pie;
+            }
+ 
+ 
+        </style>        
+    </head>
+ 
+    <body>
+        <div class="contenedor">
+            <div class="cabecera">CABECERA</div>
+            <div class="lateral-izquierdo">IZQUIERDA</div>
+            <div class="cuerpo">CUERPO</div>
+            <div class="lateral-derecho">DERECHA</div>
+            <div class="pie">PIE</div>
+        </div>
+    </body>
+</html>

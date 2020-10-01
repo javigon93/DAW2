@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<script>
+
+// Sin declarar.
+// i es una variable del ámbito global y es sobreescrita dentro de la función 
+
+i = "global";
+function f() {
+    i = "local";
+    console.log(i); // local
+}
+f();
+console.log(i); // local
+
+</script>
+
+</body>
+</html>
