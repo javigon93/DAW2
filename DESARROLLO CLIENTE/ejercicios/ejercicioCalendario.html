@@ -12,15 +12,12 @@
         h1 {
 
             text-align: center;
-
         }
 
         table {
 
             margin-left: auto;
             margin-right: auto;
-
-
         }
 
         th,
@@ -34,95 +31,90 @@
 
 <body id="body">
 
-
-
-
-
     <script>
 
         let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-        let dias = 30;
+       
         let mesIntroducido = prompt("Dime mes:");
         console.log(mesIntroducido);
         let anioIntroducido = prompt("Dime año:");
-        let fechaCalendario = new Date(anioIntroducido + "-" + mesIntroducido);
-        let calendario = "";
-        let mes = fechaCalendario.getMonth();
-        let diaSemana = fechaCalendario.getDay();
-        switch (mes) {
 
-            case 0:
-            case 2:
-            case 4:
-            case 6:
-            case 7:
-            case 9:
-            case 11:
-
-                dias = 31;
-
-                break;
-            case 1:
-                //poner aquí lo del bisiesto;
-                dias = 28;
-                break;
-
-
-
-
-
+        if ((mesIntroducido <= 0 || mesIntroducido > 12 || isNaN(mesIntroducido)) || isNaN(anioIntroducido)) {
+            alert("Dato incorrecto")
         }
 
-        calendario += "<h1>" + meses[mes] + " de " + anioIntroducido + "</h1><table>"
-            + "<tr> <td>L</td><td>M</td><td>X</td><td>J</td><td>V</td><td>S</td><td>D</td></tr><tr>"
+        else {
+            let fechaCalendario = new Date(anioIntroducido + "-" + mesIntroducido);
+            let calendario = "";
+            let mes = fechaCalendario.getMonth();
+            let diaSemana = fechaCalendario.getDay();
+            if (diaSemana == 0) {
+                diaSemana = 7;
+            }
+
+            let dias = 30;
+            switch (mes) {
+
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                case 7:
+                case 9:
+                case 11:
+
+                    dias = 31;
+
+                    break;
+                case 1:
+                    //poner aquí lo del bisiesto;
+                    dias = 28;
+                    break;
+
+            }
+
+            calendario += "<h1>" + meses[mes] + " de " + anioIntroducido + "</h1><table>"
+                + "<tr> <td>L</td><td>M</td><td>X</td><td>J</td><td>V</td><td>S</td><td>D</td></tr><tr>"
 
 
+            console.log(fechaCalendario);
 
 
+            let contador = 0;
 
-
-        console.log(fechaCalendario);
-
-
-        let contador = 0;
-
-        for (let index = 0; index < diaSemana - 1; index++) {
-            calendario += "<td></td>";
-            contador++;
-        }
-
-        for (let dia = 1; dia <= dias; dia++) {
-
-            if (contador != 7) {
-                calendario += "<td>" + dia + "</td>";
+            for (let index = 0; index < diaSemana - 1; index++) {
+                calendario += "<td></td>";
                 contador++;
             }
-            else {
 
-                calendario += "</tr><tr><td>" + dia + "</td>";
-                contador = 1;
+            for (let dia = 1; dia <= dias; dia++) {
+
+                if (contador != 7) {
+                    calendario += "<td>" + dia + "</td>";
+                    contador++;
+                }
+                else {
+
+                    calendario += "</tr><tr><td>" + dia + "</td>";
+                    contador = 1;
+
+                }
 
             }
 
-        }
-        console.log(calendario);
+            if (contador != 7) {
 
-        if (contador != 7) {
+                for (let i = contador; i < 7; i++) {
 
-            for (let i = contador; i < 7; i++) {
+                    calendario += "<td></td>"
+                }
 
-                calendario += "<td></td>"
             }
 
+            calendario += "</tr></table>";
+
+            document.getElementById("body").innerHTML = calendario;
         }
-
-        calendario += "</tr></table>";
-
-
-
-
-        document.getElementById("body").innerHTML = calendario;
-
 
     </script>
 
