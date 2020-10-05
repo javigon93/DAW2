@@ -9,7 +9,7 @@ $colors: (
  .c-cabecera{
 @each $name, $color in $colors {
   &__border-#{$name} {
-    border: 2px solid $color;
+    border: 2px solid #{$color};
   }
 } 
  }

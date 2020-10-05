@@ -1,0 +1,16 @@
+$numeros: (
+    "0": "none",
+   "1": "0 1px 3px hsla(0,0%,0%,.2)", 
+   "2": "0 4px 6px hsla(0,0%,0%,.2)", 
+   "3": "0 5px 15px hsla(0,0%,0%,.2)",
+   "4": "0 10px 24px hsla(0,0%,0%,.2)",
+   "5": "0 15px 35px hsla(0,0%,0%,.2)",
+   "6": "0 20px 40px hsla(0,0%,0%,.2)"
+);
+ 
+@each $name, $numero in $numeros {
+  .g--box-shadow-#{$name} {
+    box-shadow: #{$numero};
+  }
+} 
+   
