@@ -1,0 +1,20 @@
+.box{
+
+height: 200px;
+width: 200px;
+padding: 10px;
+border: 30px solid red;
+text-align: center;
+box-sizing: border-box;
+
+
+/* margin: 100px; */
+
+
+}
+
+*{
+
+background-color: rgb(163, 114, 114);
+
+}

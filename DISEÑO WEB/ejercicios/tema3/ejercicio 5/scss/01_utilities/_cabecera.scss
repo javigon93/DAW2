@@ -1,0 +1,15 @@
+$colors: (
+   "rojo": "#FF0000", 
+   "verde": "#00FF00", 
+   "azul": "#0000FF",
+   "amarillo": "#FFFF00",
+   "cyan": "#00FFFF"
+
+);
+ .c-cabecera{
+@each $name, $color in $colors {
+  &__border-#{$name} {
+    border: 2px solid $color;
+  }
+} 
+ }
