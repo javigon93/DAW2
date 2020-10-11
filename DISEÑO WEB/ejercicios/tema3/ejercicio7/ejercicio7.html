@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        To detect network speed using JavaScript
+    </title>
+
+    <style>
+
+        meter{
+    
+          display: block;
+          width: 20%;
+          height: 10px;
+          margin-left: auto;
+          margin-right: auto;
+    
+        }
+    
+        button{
+          display: block;
+         margin-left:auto ;
+         margin-right: auto;
+        }
+    
+      </style>
+</head>
+
+<body>
+
+    <div id="meter">
+
+        <meter> </meter>
+        <p id="texto-velocidad"></p>
+
+    </div>
+
+
+
+
+
+
+    <button name="boton" onclick="displaySpeed()"> Clica para Actualizar </button>
+
+
+
+
+    <script type="text/javascript">
+       
+       var userImageLink =
+            "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200714180638/CIP_Launch-banner.png";
+        var time_start, end_time;
+
+        // The size in bytes 
+        var downloadSize = 83132;
+        var downloadImgSrc = new Image();
+
+        downloadImgSrc.onload = function () {
+            end_time = new Date().getTime();
+            displaySpeed();
+        };
+        time_start = new Date().getTime();
+        downloadImgSrc.src = userImageLink;
+        document.write("time start: " + time_start);
+        document.write("<br>");
+
+        function displaySpeed() {
+            var timeDuration = (end_time - time_start) / 1000;
+            var loadedBits = downloadSize * 8;
+
+            /* Converts a number into string 
+               using toFixed(2) rounding to 2 */
+            var bps = (loadedBits / timeDuration).toFixed(2);
+            var speedInKbps = (bps / 1024).toFixed(2);
+            var speedInMbps = (speedInKbps / 1024).toFixed(2);
+            console.log("Your internet connection speed is: \n"
+                + bps + " bps\n" + speedInKbps
+                + " kbps\n" + speedInMbps + " Mbps\n");
+
+                let valor =`<meter min="0" max="500" low="20" high="100" optimum="101" value="${speedInMbps}"></meter>`;
+                document.getElementById("meter").innerHTML = valor;
+                document.getElementById("texto-velocidad").innerHTML = ""+speedInMbps+"Mb/s";
+        } 
+    </script>
+</body>
+
+</html>

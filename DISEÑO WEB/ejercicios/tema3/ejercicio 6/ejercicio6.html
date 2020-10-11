@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <style>
+
+    meter{
+
+      display: block;
+      width: 20%;
+      height: 10px;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    button{
+      display: block;
+     margin-left:auto ;
+     margin-right: auto;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="meter">
+
+    <meter> </meter>
+
+
+  </div>
+
+
+
+
+
+
+  <button name="boton" onclick="actualizar()"> Clica para Actualizar </button>
+
+
+
+
+</body>
+
+<script>
+
+
+  function iniciarValor() {
+    let valor = '<meter min="0" max="100" low="25" high="75" optimum="24" value="50"></meter>';
+    document.getElementById("meter").innerHTML = valor;
+    console.log(valor);
+
+
+  }
+
+
+
+
+
+  function actualizar() {
+
+    aleatorio= Math.random()*100;
+
+
+    valor = `<meter min="0" max="100" low="25" high="75" optimum="24" value="${aleatorio}"></meter>`;
+    console.log(valor);
+    document.getElementById("meter").innerHTML = valor;
+
+  };
+
+  iniciarValor();
+
+</script>
+
+</html>

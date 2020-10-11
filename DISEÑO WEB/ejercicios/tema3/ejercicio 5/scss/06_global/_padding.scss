@@ -1,0 +1,39 @@
+// aqui se va a probar las funciones arrays etc para algunas cosas de global
+
+
+$padding:(
+
+"0":"0px",
+"1":"5px",
+"2":"12px",
+"3":"50px"
+
+
+);
+
+@function getPadding($index){
+
+@return map-get($padding, $index );
+
+
+};
+
+@function getKeyPaddings(){ //para solo obtener las claves, en función para evitar lo máximo posiblle referenciar el array.
+
+@return map-keys($padding);//map-keys solo devuelve las claves, que en este caso es lo único que necesitamos
+
+
+}
+
+@each $name in getKeyPaddings(){ //map-keys solo devuelve las claves, que en este caso es lo único que necesitamos
+
+    .g--padding-#{$name}{
+
+
+        padding: getPadding($name)
+
+    }
+    
+}
+
+//con esto, ahorramos código repetitivo, getPadding($index) se encarga de colocar los paddings globales

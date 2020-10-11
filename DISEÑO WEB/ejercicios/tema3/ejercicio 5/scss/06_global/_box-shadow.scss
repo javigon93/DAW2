@@ -1,4 +1,4 @@
-$numeros: (
+$shadows: (
     "0": "none",
    "1": "0 1px 3px hsla(0,0%,0%,.2)", 
    "2": "0 4px 6px hsla(0,0%,0%,.2)", 
@@ -6,12 +6,41 @@ $numeros: (
    "4": "0 10px 24px hsla(0,0%,0%,.2)",
    "5": "0 15px 35px hsla(0,0%,0%,.2)",
    "6": "0 20px 40px hsla(0,0%,0%,.2)"
-);
+); //ARRAY CLAVE VALOR PARA VALORES REFERIDOS A BOX SHADOW
  
-@each $name, $numero in $numeros {
-  .g--box-shadow-#{$name} {
-    box-shadow: #{$numero};
-    margin: 5px;
+
+@function getBoxShadow($index){
+
+  @return unquote(map-get($shadows,""+$index )); //para que no se pasen parámetros sin comillas
+  
+  
+  };
+
+
+
+  @function getKeyShadows(){ //para solo obtener las claves, en función para evitar lo máximo posiblle referenciar el array.
+
+    @return map-keys($shadows);//map-keys solo devuelve las claves, que en este caso es lo único que necesitamos
+
+  };
+
+  @mixin box-shadow($name) {
+    -webkit-box-shadow: getBoxShadow($name);
+    -moz-box-shadow: getBoxShadow($name);
+    box-shadow: getBoxShadow($name);
   }
-} 
-   
+
+
+  
+@each $name in getKeyShadows(){ //map-keys solo devuelve las claves, que en este caso es lo único que necesitamos
+
+  .g--box-shadow-#{$name}{
+
+
+     @include box-shadow($name);
+  }
+  
+}
+
+//con esto, ahorramos código repetitivo, getPadding($index) se encarga de colocar los paddings globales
+
