@@ -1,0 +1,8 @@
+¿En que carpeta debería estar el script? 
+
+En realidad no debería de estar en ninguna, puesto que este .sh es previo a nada, es decir, aun no hay estructura de carpetas porque el script es para crearla
+Por ello este script se debería guardar en algun sitio y posteriormente ejecutarlo donde se quiera hacer la estructura de carpetas.
+
+¿Que diferencia hay entre npm init y npm run init
+
+El primero genera el json de node y el segundo haría la ejecución (mediante programación previa del json de node) del .sh.
