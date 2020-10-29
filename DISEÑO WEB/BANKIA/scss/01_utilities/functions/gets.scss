@@ -1,0 +1,21 @@
+@function getPadding($key) {
+    @return unquote(map-get($paddings,""+$key));
+  }
+
+@function getColorVariants($key) {
+    @return unquote(map-get($colors,""+$key));
+  }
+
+@function getColor($key,$index) {
+    @return unquote(nth(map-get($colors,""+$key),$index));
+  }
+
+@function getMargin($key){
+
+    @return unquote(map-get($margins, "" + $key));
+
+
+}
+
+
+

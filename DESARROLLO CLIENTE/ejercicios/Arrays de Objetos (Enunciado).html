@@ -106,13 +106,13 @@
 				let asignaturaMejor = {};
 				let asignaturaPeor = {};
 				let nota_suma = 0;
-				//console.log(notas_alumno);
+
 
 				notas_alumno.forEach(element => {
 
 					let nota_alumno = element.nota;
 					nota_suma += nota_alumno;
-					//console.log(nota_alumno);
+
 					contador++;
 
 					if (element.nota > notaMasAlta) {
@@ -199,7 +199,7 @@
 				encontrado = true;
 				respuesta += alumno['nombre'] + ", ";
 
-				//console.log(respuesta);
+
 
 
 			}
@@ -237,7 +237,7 @@
 				encontrado = true;
 				respuesta += alumno['nombre'] + ", ";
 
-				//console.log(respuesta);
+
 
 
 			}
@@ -357,17 +357,23 @@
 	function nuevaAsignatura() {
 
 		let nombre_alumno = prompt("Dime el nombre del alumno");
-		
+
 
 		let indice_alumno = alumnos.findIndex(item => item.nombre == nombre_alumno);
 
-		
-		if (indice_alumno != -1) {
-			
-			let asignatura_introducida= prompt("Introduce la asignatura del alumno");
-			let nota_introducida= parseInt(prompt("Introduce la nota respecto a la asignatura"));
 
-			let nueva_calificacion={
+		if (indice_alumno != -1) {
+
+			let asignatura_introducida = prompt("Introduce la asignatura del alumno");
+			let nota_introducida = parseInt(prompt("Introduce la nota respecto a la asignatura"));
+
+			if (nota_introducida > 10) { //si te pasas de 10, por defecto se pone 10
+
+				nota_introducida = 10;
+
+			}
+
+			let nueva_Asignatura = {
 
 				asignatura: asignatura_introducida,
 				nota: nota_introducida
@@ -375,26 +381,26 @@
 			}
 
 
-			
-		let	alumno_solicitado=alumnos[indice_alumno]['calificaciones'];
 
-		let indice_asignatura= alumno_solicitado.findIndex(item=> item.asignatura == asignatura_introducida);
+			let alumno_solicitado = alumnos[indice_alumno]['calificaciones'];
 
-
-		if (indice_asignatura==-1) {
-		
-			alumno_solicitado.push(nueva_calificacion);
-
-		}
-
-		else{
-
-			alumno_solicitado[indice_asignatura].nota=nota_introducida;
+			let indice_asignatura = alumno_solicitado.findIndex(item => item.asignatura == asignatura_introducida);
 
 
-		};
-		
-		console.log(alumnos);
+			if (indice_asignatura == -1) {
+
+				alumno_solicitado.push(nueva_Asignatura);
+
+			}
+
+			else {
+
+				alumno_solicitado[indice_asignatura].nota = nota_introducida;
+
+
+			};
+
+			console.log(alumnos);
 
 		}
 
@@ -402,7 +408,7 @@
 
 			console.log("No se ha encontrado el alumno");
 		}
-		
+
 
 
 	}
@@ -410,5 +416,3 @@
 </script>
 
 </html>
-
-
