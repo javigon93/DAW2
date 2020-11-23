@@ -1,0 +1,33 @@
+.c-texto{
+
+
+    font-size: getSize("m1.5");
+    padding-bottom: getPadding(4);
+    text-align: justify;
+    
+    &--padding-null{
+
+        padding: 0 0 0 0 ;
+
+
+
+    }
+
+    &__mediano{
+        font-family:"SourceSans-Pro" ;
+        font-size: getSize("m2");
+
+
+
+    }
+
+    &__grande{
+        
+        font-size: getSize("l1");
+
+
+
+
+    }
+
+}

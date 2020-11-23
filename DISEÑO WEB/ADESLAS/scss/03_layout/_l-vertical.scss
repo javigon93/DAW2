@@ -1,0 +1,21 @@
+.l-vertical {
+        display: flex;
+        flex-direction: column;
+        
+        text-align: center;
+        
+
+
+    &--2-1{
+
+
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+
+
+
+
+
+    }
+
+    }

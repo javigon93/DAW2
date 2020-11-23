@@ -1,0 +1,72 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "jajajajjaja",
+      "edad": "1"
+    },
+    {
+      "id": 3,
+      "title": "lolo",
+      "edad": "36"
+    },
+    {
+      "id": 1,
+      "title": "json-server",
+      "edad": "1"
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 6,
+      "title": "IMANOLILLO JOVENCILLO",
+      "edad": "28"
+    },
+    {
+      "id": "9",
+      "titulo": "fafda",
+      "edad": "36"
+    },
+    {
+      "id": "10",
+      "titulo": "Hola que ase",
+      "edad": "99"
+    },
+    {
+      "id": "dfdsfasd",
+      "titulo": "",
+      "edad": ""
+    },
+    {
+      "id": "24",
+      "title": "sdsfa",
+      "edad": "36"
+    },
+    {
+      "id": "da",
+      "title": "dfa",
+      "edad": "dfw"
+    },
+    {
+      "id": "99",
+      "title": "cca",
+      "edad": "88"
+    },
+    {
+      "id": 101,
+      "title": "ads",
+      "edad": "25"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

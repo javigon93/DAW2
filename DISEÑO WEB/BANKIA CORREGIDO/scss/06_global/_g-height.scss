@@ -1,0 +1,19 @@
+.g--height{
+
+
+    @for $var from 1 to 20 {
+        
+        &--#{$var}{
+
+            height: $var*10px;
+
+
+        }
+
+
+
+    }
+
+
+
+}

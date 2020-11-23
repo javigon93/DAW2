@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+
+$colors:(
+   
+    "default": (#79B8FC, #55A8F6, #2D9CF0, #128FE2, #107DB7, #0C6892, #074F69, #043544, #011419),
+    "alt":     (#FEEFD2, #FCD79C, #FBBC6A, #FA9D33, #EF7706, #B85505, #863803, #501E02, #190801),
+    "negro":   (#000000), 
+    "blanco":  (#FFFFFF,#FCFCFC,#FAFAFA,#F7F7F7,#F5F5F5,#F2F2F2,#F0F0F0,#EDEDED,#EBEBEB),
+    "gris":(#FFFFFF, #FBF9F8, #F5F0F0, #EFECEC, #E6E6E6, #DEE3E3, #D1DFE0, #C8DDE0, #BAD8DE)
+);
+
+$background-color:#FFFFFF;

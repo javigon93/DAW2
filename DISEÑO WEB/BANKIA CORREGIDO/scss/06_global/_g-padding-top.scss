@@ -1,0 +1,23 @@
+.g--padding-top{
+
+
+    @for $numero from 1 to 21 {
+        
+        &--#{$numero}{
+    
+            padding-top: getPadding(#{$numero}) ;
+           
+    
+    
+        }
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    }

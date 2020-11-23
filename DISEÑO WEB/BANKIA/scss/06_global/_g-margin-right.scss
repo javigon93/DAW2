@@ -1,0 +1,23 @@
+.g--margin-right{
+
+
+    @for $numero from 0 to 21 {
+        
+        &--#{$numero}{
+    
+            margin-right: getMargin(#{$numero}) ;
+           
+    
+    
+        }
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    }

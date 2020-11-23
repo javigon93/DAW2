@@ -1,0 +1,24 @@
+.g--padding{
+
+
+    @each $name, $var in $paddings {
+        
+        &--#{$name}{
+
+            padding: getPadding($name) getPadding($var) getPadding($var) getPadding($var) 
+
+
+
+
+        } 
+
+
+
+
+
+    }
+
+
+
+
+}

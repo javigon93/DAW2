@@ -1,0 +1,51 @@
+
+.g--background-color{
+
+
+    
+
+
+
+    @each $numero in $numeros {
+
+
+        &--default-#{$numero}{
+
+            background-color: getColor("default", $numero);
+
+
+
+        }
+
+       
+    }
+
+    
+    
+    
+
+    &--blanco{
+
+
+        background-color: getColor("blanco", 2);
+
+
+    }
+
+
+    @each $numero in $numeros {
+
+
+        &--gris-#{$numero}{
+
+            background-color: getColor("gris", $numero);
+
+
+
+        }
+
+       
+    }
+
+
+}

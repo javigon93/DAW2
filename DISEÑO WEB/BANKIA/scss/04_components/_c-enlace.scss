@@ -1,0 +1,19 @@
+.c-enlace{
+
+    color: getColor("negro", 1);
+
+    font-family:"SourceSans-Pro" ;
+    text-decoration: none;
+
+    
+
+    &c-enlace :visited{
+
+        color: getColor("negro",1);
+        text-decoration: none;
+
+
+
+    }
+
+}

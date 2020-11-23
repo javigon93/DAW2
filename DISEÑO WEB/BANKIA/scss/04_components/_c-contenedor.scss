@@ -1,0 +1,20 @@
+.c-contenedor{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: getPadding(6) getPadding(5) getPadding(8) getPadding(5);
+
+
+    &__solapado{
+
+        z-index: 1;
+        position: relative;
+        padding-left: getPadding(15);
+        height: 150px;
+
+    }
+
+
+}

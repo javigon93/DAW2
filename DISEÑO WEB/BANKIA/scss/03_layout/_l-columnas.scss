@@ -1,0 +1,68 @@
+.l-columnas {
+    display: grid;
+    
+    
+    
+  
+    &__espaciado{
+
+        @for $i from 1 to 6 {
+
+
+
+            &--#{$i}{
+     
+             grid-template-columns: repeat($i, 1fr);
+             column-gap: getMargin(8);
+     
+            }
+     
+     
+           }
+     
+
+
+
+
+    }
+
+
+
+
+    &__pegado{
+
+
+        @for $i from 2 to 6 {
+
+
+
+            &--#{$i}{
+     
+             grid-template-columns: repeat($i, 1fr);
+           
+     
+            }
+     
+     
+           }
+     
+
+
+
+
+    }
+
+
+
+   
+
+
+
+
+
+
+
+  
+  
+
+}

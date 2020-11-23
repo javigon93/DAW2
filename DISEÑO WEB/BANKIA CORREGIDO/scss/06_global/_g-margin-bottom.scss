@@ -1,0 +1,23 @@
+.g--margin-bottom{
+
+
+    @for $numero from 1 to 21 {
+        
+        &--#{$numero}{
+    
+            margin-bottom: getMargin(#{$numero}) ;
+           
+    
+    
+        }
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    }

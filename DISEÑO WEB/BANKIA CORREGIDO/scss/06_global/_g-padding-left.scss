@@ -1,0 +1,22 @@
+.g--padding-left{
+
+    
+    @for $var from 0 to 21 {
+        
+        &--#{$var}{
+
+            padding-left: getPadding(#{$var});
+            
+
+
+
+
+        }
+
+
+
+    }
+
+
+
+}

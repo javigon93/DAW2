@@ -1,0 +1,51 @@
+.c-menu {
+
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+
+
+    &__item{
+
+
+       
+
+
+            padding-right: 8px;
+    
+    
+    
+        
+    
+
+
+
+    }
+
+}
+
+
+.c-menu2 {
+
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+
+
+    &__item{
+
+       
+            padding-left: 2px;
+            padding-right: 2px;
+    
+        
+    
+
+
+
+
+    }
+
+}

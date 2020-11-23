@@ -1,0 +1,22 @@
+.g--padding-horizontal{
+
+
+
+    @for $numero from 1 to 21 {
+    
+        &--#{$numero}{
+    
+            padding-left: getPadding(#{$numero}) ;
+            padding-right: getPadding(#{$numero}) ;
+    
+    
+        }
+    
+    
+    
+    }
+    
+
+
+
+}

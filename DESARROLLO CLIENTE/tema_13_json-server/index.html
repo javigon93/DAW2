@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <h1>API REST CRUD</h1>
+    <button onclick="get()">GET (todos)</button>
+
+
+
+
+
+
+    <script>
+
+
+        function get(){
+
+            let xhr= new XMLHttpRequest();
+
+        xhr.open('GET', "C:\Users\34679\Desktop\SEGUNDO DAW\DESARROLLO CLIENTE\tema 13 json-server/db.json");
+        xhr.responseType()='json';
+        xhr.send();
+
+
+
+        xhr.onload=function(){
+
+            if (xhr.status !=200) {
+
+                      console.log($xhr.status)  
+            }
+
+            else {
+
+
+               console.log(xhr.response);
+
+
+
+            }
+
+
+
+
+
+        }
+
+        }
+        
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

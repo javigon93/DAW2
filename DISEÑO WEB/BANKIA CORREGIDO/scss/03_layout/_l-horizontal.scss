@@ -1,0 +1,20 @@
+.l-horizontal{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+        
+// probar aquí un modificador para tener las cosas alineadas desde abajo, como en el menu o desde arriba
+
+        &--centrado{
+
+
+            justify-content: center;
+            text-align: center;
+
+
+        }
+}

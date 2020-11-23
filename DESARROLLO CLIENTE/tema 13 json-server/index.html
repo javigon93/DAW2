@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <h1>API REST CRUD</h1>
+    <button onclick="get()">GET (todos)</button>
+    <button onclick="getId()">GET por id</button>
+    <button onclick="post()">Postear en json-server</button>
+    <button onclick="put()">PUT</button>
+    <button onclick="patch()">PATCH</button>
+    <button onclick="borrar()">DELETE</button>
+
+
+
+
+
+    <script>
+
+
+        function get() {
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('GET', "http://localhost:3000/posts");
+            xhr.responseType = 'json';
+            xhr.send();
+
+
+
+            xhr.onload = function () {
+
+                if (xhr.status != 200) {
+
+                    console.log(xhr.status)
+                }
+
+                else {
+
+                    datos = xhr.response;
+
+                    datos.forEach(element => {
+                        console.log(xhr.statusText + "Autor " + element.id + ": " + element.title + " " + element.edad);
+                    });
+
+
+
+
+                }
+
+            }
+
+
+
+        }
+
+        function getId() {
+
+
+            let xhr = new XMLHttpRequest();
+
+            id = parseInt(prompt("Indica el id"));
+
+            xhr.open('GET', "http://localhost:3000/posts/" + id);
+            xhr.responseType = 'json';
+            xhr.send();
+
+            xhr.onerror = function () { alert("Request failed"); };
+
+
+            xhr.onload = function () {
+
+                if (xhr.status != 200) {
+
+                    console.log(xhr.status + " // Texto de Error: " + xhr.statusText)
+                }
+
+                else {
+
+                    datos = xhr.response;
+
+
+                    console.log("Autor " + datos.id + ": " + datos.title + " " + datos.edad);
+
+
+
+
+
+                }
+
+            }
+
+
+
+
+
+
+
+        }
+
+        function post() {
+            id = parseInt(prompt("Indica el id"));
+            titulo = prompt("introduce titulo:");
+            edad = prompt("introduce edad");
+            let xhr = new XMLHttpRequest();
+
+            datos = {
+                'id': id,
+                'title': titulo,
+                'edad': edad
+
+
+
+
+            };
+
+
+            xhr.open('POST', "http://localhost:3000/posts");
+            xhr.setRequestHeader('Content-type', 'application/json')
+            xhr.responseType = 'json';
+            xhr.send(JSON.stringify(datos));
+
+            xhr.onload = function () {
+
+                if (xhr.status != 200 && xhr.status != 201) {
+
+                    console.log(xhr.status + " // Texto de Error: " + xhr.statusText)
+                }
+
+                else {
+
+                    datos = xhr.response;
+
+
+                    console.log("Autor " + datos.id + ": " + datos.title + " " + datos.edad);
+
+
+
+
+
+                }
+
+
+
+
+            }
+
+
+        }
+
+
+        function put() {
+
+
+            id = parseInt(prompt("Indica el id"));
+            titulo = prompt("introduce titulo:");
+            edad = prompt("introduce edad");
+            let xhr = new XMLHttpRequest();
+
+            datos = {
+                'id': id,
+                'title': titulo,
+                'edad': edad
+
+
+
+
+            };
+
+
+            xhr.open('PUT', "http://localhost:3000/posts/" + id);
+            xhr.setRequestHeader('Content-type', 'application/json')
+            xhr.responseType = 'json';
+            xhr.send(JSON.stringify(datos));
+
+            xhr.onload = function () {
+
+                if (xhr.status != 200 && xhr.status != 201) {
+
+                    console.log(xhr.status + " // Texto de Error: " + xhr.statusText)
+                }
+
+                else {
+
+                    datos = xhr.response;
+
+
+                    console.log("Autor " + datos.id + ": " + datos.title + " " + datos.edad);
+
+
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+        }
+
+
+        function patch() {
+
+
+            id = parseInt(prompt("Indica el id"));
+            opcion = prompt("1.Titulo // 2.Edad");
+
+            if (opcion == 1) {
+
+                titulo = prompt("introduce título");
+                datos = {
+
+                    'title': titulo
+
+                };
+
+            }
+
+            else if (opcion == 2) {
+                edad = prompt("introduce edad");
+                datos = {
+
+                    'edad': edad
+
+                };
+            }
+
+
+            if (opcion==1 || opcion==2) {
+                let xhr = new XMLHttpRequest();
+
+            xhr.open('PATCH', "http://localhost:3000/posts/" + id);
+            xhr.setRequestHeader('Content-type', 'application/json')
+            xhr.responseType = 'json';
+            xhr.send(JSON.stringify(datos));
+
+            xhr.onload = function () {
+
+                if (xhr.status != 200 && xhr.status != 201) {
+
+                    console.log(xhr.status + " // Texto de Error: " + xhr.statusText)
+                }
+
+                else {
+
+                    datos = xhr.response;
+
+
+                    console.log("Autor " + datos.id + ": " + datos.title + " " + datos.edad);
+
+
+
+
+
+                }
+
+
+
+
+            }
+            }
+
+            else{
+
+
+                console.log("elige una opción válida")
+
+
+            }
+           
+           
+
+           
+
+
+           
+
+
+
+
+        }
+
+
+        function borrar(){
+
+
+            
+
+            let xhr = new XMLHttpRequest();
+
+            id = parseInt(prompt("Indica el id"));
+
+            xhr.open('DELETE', "http://localhost:3000/posts/" + id);
+            xhr.responseType = 'json';
+            xhr.send();
+
+            xhr.onerror = function () { alert("Request failed"); };
+
+
+            xhr.onload = function () {
+
+                if (xhr.status != 200) {
+
+                    console.log(xhr.status + " // Texto de Error: " + xhr.statusText)
+                }
+
+                else {
+
+                    datos = xhr.response;
+
+
+                    console.log("Autor " + datos.id + ": " + datos.title + " " + datos.edad);
+
+
+
+
+
+                }
+
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

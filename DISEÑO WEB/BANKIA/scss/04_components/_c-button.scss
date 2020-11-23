@@ -1,0 +1,85 @@
+.c-button{
+
+    font-family: "SourceSansPro-Semibold";
+    // font-family: "bankia-regular";
+    padding: getPadding(1) getPadding(3) getPadding(1) getPadding(3); 
+    width: auto;
+    cursor: pointer;
+    margin-bottom: 0;
+    margin-top: 0;
+    float: none;
+    margin-right: getMargin(3);
+    border: 1px solid black;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 100%;
+    &__primario{
+
+       
+
+
+        &--alt{
+
+
+            background: getColor("alt", 5);
+            border-color: getColor("alt", 5);
+           
+
+
+        }
+
+
+    }
+
+
+    &__secundario{
+
+
+        padding: getPadding(3) getPadding(5) getPadding(3) getPadding(5);
+
+        &--alt{
+
+
+            border-color: getColor("alt", 5);
+            
+            background: getColor("blanco",2);
+
+
+
+        }
+
+
+        &--negro{
+
+            
+            border-color: getColor("negro", 1);
+            background: transparent;
+
+
+        }
+
+
+    }
+
+    &__terciario{
+
+        color: getColor("default", 7);
+        background: transparent;
+        font-family: "SourceSansPro-Semibold";
+        border-color: transparent;
+
+          &--negro{
+
+
+            border-color: getColor("negro", 1);
+           
+
+
+          }
+
+    }
+
+
+
+
+}

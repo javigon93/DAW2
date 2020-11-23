@@ -1,0 +1,24 @@
+.g--padding-vertical{
+
+
+    @each $name, $numero in $paddings {
+
+
+        &--#{$name}{
+
+            padding-top: getPadding(#{$name});
+            padding-bottom: getPadding(#{$name});
+
+
+
+        }
+
+       
+    }    
+
+
+
+
+
+
+}

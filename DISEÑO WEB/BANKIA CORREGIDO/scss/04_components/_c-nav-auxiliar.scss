@@ -1,0 +1,18 @@
+.c-nav-Auxiliar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__item{
+
+        border-right: 1px solid getColor("negro",1);
+        padding-right:10px ;
+        padding-left: 10px;
+
+    }
+   
+
+
+
+
+}

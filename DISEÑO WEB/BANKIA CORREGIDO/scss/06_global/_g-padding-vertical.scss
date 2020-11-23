@@ -1,0 +1,23 @@
+.g--padding-vertical{
+
+
+@for $numero from 1 to 11 {
+    
+    &--#{$numero}{
+
+        padding-top: getPadding(#{$numero}) ;
+        padding-bottom: getPadding(#{$numero}) ;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+}
