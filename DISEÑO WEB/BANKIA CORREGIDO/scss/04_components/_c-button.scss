@@ -1,21 +1,40 @@
 .c-button{
 
-    font-family: "SourceSansPro-Semibold";
-    // font-family: "bankia-regular";
-    padding: getPadding(1) getPadding(3) getPadding(1) getPadding(3); 
-    width: auto;
-    cursor: pointer;
-    margin-bottom: 0;
-    margin-top: 0;
+    
+    
+
+
+   
+   
   
-    margin-right: getMargin(3);
-    border: 1px solid black;
-    border-radius: 2px;
-    font-weight: bold;
-    font-size: 100%;
+   
+    
+   
+  
+   
+   
+    
+    
+    // font-size: 100%;
+
+
+
     &__primario{
 
-       
+        font-family: "SourceSansPro-Semibold";
+   
+        padding: getPadding(2) getPadding(3) getPadding(2) getPadding(3); 
+        width: auto;
+        cursor: pointer;
+        margin-bottom: 0;
+        margin-top: 0;
+  
+        margin-right: getMargin(3);
+        border: 1px solid black;
+        border-radius: 2px;
+        font-weight: bold;
+        font-size: 100%;
+
 
 
         &--alt{
@@ -34,9 +53,13 @@
 
     &__secundario{
 
-
-        padding: getPadding(3) getPadding(5) getPadding(3) getPadding(5);
-
+        margin-right: getMargin(3);
+        padding: getPadding(4) getPadding(7) getPadding(4) getPadding(7); 
+        font-family: "SourceSansPro-Semibold";
+        border-radius: 2px;
+        font-weight: bold;
+        border: 1px solid black;
+        cursor: pointer;
         &--alt{
 
 
@@ -44,7 +67,7 @@
             
             background: getColor("blanco",2);
 
-
+            // padding: getPadding(2) getPadding(3) getPadding(2) getPadding(3); 
 
         }
 
@@ -63,10 +86,14 @@
 
     &__terciario{
 
+
+        margin-right: getMargin(3);
         color: getColor("default", 7);
         background: transparent;
         font-family: "SourceSansPro-Semibold";
         border-color: transparent;
+        font-weight: bold;
+        cursor: pointer;
 
           &--negro{
 

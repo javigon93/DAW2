@@ -1,13 +1,14 @@
 .c-nav-Auxiliar{
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content:flex-end;
+    align-content:center;
+    align-items:flex-end;
 
     &__item{
 
         border-right: 1px solid getColor("negro",1);
-        padding-right:10px ;
-        padding-left: 10px;
+        padding-right:getPadding(3) ;
+        padding-left: getPadding(3);
 
     }
    
