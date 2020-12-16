@@ -1,0 +1,22 @@
+.c-nav{
+
+   
+
+
+    background-color: getColor("default", 5);
+    display: flex;
+    justify-content: flex-start;
+    padding: getPadding(2);
+    font-family: "bankia-medium";
+    
+    &__item{
+
+
+        font-weight: normal;
+        padding-right: getPadding(5);
+
+
+
+    }
+
+}

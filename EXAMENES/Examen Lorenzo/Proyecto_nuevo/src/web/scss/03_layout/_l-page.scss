@@ -1,0 +1,55 @@
+.l-page{
+
+    display: grid;
+    margin-left: 20%;
+    margin-right: 20%;
+    grid-template-areas:
+                  "cabecera cabecera cabecera cabecera cabecera"
+                  "left-navigation left-navigation contenido contenido contenido"
+                  "pie pie pie pie pie";
+
+    &__area-cabecera{
+        grid-area: cabecera;
+
+    }
+
+    &__area-content{
+
+        grid-area: contenido;
+
+    }
+
+
+    &__area-left-navigation{
+
+        grid-area: left-navigation;
+
+    }
+
+
+    &__area-footer{
+
+        grid-area: pie;
+
+
+    }
+
+
+
+    &--switch{
+
+
+        grid-template-areas:
+            "cabecera cabecera cabecera cabecera cabecera"
+            "contenido contenido contenido left-navigation left-navigation"
+            "pie pie pie pie pie";
+
+        
+
+
+    }
+
+
+
+
+}

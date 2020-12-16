@@ -1,0 +1,14 @@
+
+
+  
+
+  @function getBorderWidth($key) {
+    @return unquote(map-get($border_widths,""+$key));
+  }
+
+
+ 
+  @function getColor($key,$index) {
+    @return nth(map-get($colores,""+$key), $index);
+  }
+  

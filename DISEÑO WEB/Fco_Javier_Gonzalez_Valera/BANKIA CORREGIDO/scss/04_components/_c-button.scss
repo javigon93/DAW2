@@ -1,0 +1,115 @@
+.c-button{
+
+    
+    
+
+
+   
+   
+  
+   
+    
+   
+  
+   
+   
+    
+    
+    // font-size: 100%;
+
+
+
+    &__primario{
+
+        font-family: "SourceSansPro-Semibold";
+   
+        padding: getPadding(2) getPadding(3) getPadding(2) getPadding(3); 
+        width: auto;
+        cursor: pointer;
+        margin-bottom: 0;
+        margin-top: 0;
+  
+        margin-right: getMargin(3);
+        border: 1px solid black;
+        border-radius: 2px;
+        font-weight: bold;
+        font-size: 100%;
+
+
+
+        &--alt{
+
+
+            background: getColor("alt", 5);
+            border-color: getColor("alt", 5);
+           
+
+
+        }
+
+
+    }
+
+
+    &__secundario{
+
+        margin-right: getMargin(3);
+        padding: getPadding(4) getPadding(7) getPadding(4) getPadding(7); 
+        font-family: "SourceSansPro-Semibold";
+        border-radius: 2px;
+        font-weight: bold;
+        border: 1px solid black;
+        cursor: pointer;
+        &--alt{
+
+
+            border-color: getColor("alt", 5);
+            
+            background: getColor("blanco",2);
+
+            // padding: getPadding(2) getPadding(3) getPadding(2) getPadding(3); 
+
+        }
+
+
+        &--negro{
+
+            
+            border-color: getColor("negro", 1);
+            background: transparent;
+
+
+        }
+
+
+    }
+
+    &__terciario{
+
+
+        margin-right: getMargin(3);
+        color: getColor("default", 7);
+        background: transparent;
+        font-family: "SourceSansPro-Semibold";
+        border-color: transparent;
+        font-weight: bold;
+        cursor: pointer;
+
+          &--negro{
+
+
+            border-color: getColor("negro", 1);
+           
+
+
+          }
+
+    }
+
+
+
+
+
+    
+
+}

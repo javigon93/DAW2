@@ -1,0 +1,71 @@
+// 01
+@import "./01_utilities/functions/gets.scss";
+@import "./01_utilities/variables/colores";
+@import "./01_utilities/variables/tamanos";
+@import "./01_utilities/variables/fuentes";
+@import "./01_utilities/mixins/debugBorderLayout";
+
+
+
+//02
+
+@import "./02_base/reset.scss";
+
+
+
+//03
+
+@import "./03_layout/l-horizontal";
+@import "./03_layout/l-page";
+@import "./03_layout/l-extremos";
+@import "./03_layout/l-columnas";
+@import "./03_layout/l-masonry";
+
+//04
+
+
+
+
+@import "./04_components/c-body";
+@import "./04_components/c-nav";
+@import "./04_components/c-nav-auxiliar";
+@import "./04_components/c-menu";
+@import "./04_components/c-button";
+@import "./04_components/c-logo";
+@import "./04_components/c-icon";
+@import "./04_components/c-titulo";
+@import "./04_components/c-texto";
+@import "./04_components/c-enlace";
+@import "./04_components/c-bloque";
+@import "./04_components/c-img";
+@import "./04_components/c-contenedor";
+@import "./04_components/c-columna";
+@import "./04_components/c-panel";
+
+
+
+
+
+
+
+
+
+//06
+@import "./06_global/g-padding-vertical";
+@import "./06_global/g-padding-top";
+@import "./06_global/g-change-font";
+@import "./06_global/g-padding-bottom";
+@import "./06_global/g-margin-top";
+@import "./06_global/g-margin-bottom";
+@import "./06_global/g-margin-left";
+@import "./06_global/g-texto-centrado";
+@import "./06_global/g-padding-horizontal";
+@import "./06_global/g-background-color";
+@import "./06_global/g-padding-left";
+@import "./06_global/g-position";
+@import "./06_global/g-margin-right";
+@import "./06_global/g-opacity";
+@import "./06_global/g-padding";
+@import "./06_global/g-height";
+
+

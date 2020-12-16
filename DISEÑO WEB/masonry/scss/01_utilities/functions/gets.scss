@@ -1,0 +1,27 @@
+@function getPadding($key) {
+    @return map-get($paddings,""+$key);
+  }
+
+@function getColorVariants($key) {
+    @return map-get($colors,""+$key);
+  }
+
+  @function getColor($key,$index) {
+    @return nth(map-get($colors,""+$key), $index);
+  }
+
+@function getMargin($key){
+
+    @return map-get($margins, "" + $key);
+
+
+}
+
+@function getSize($key){
+
+  @return map-get($font-sizes, "" + $key);
+
+
+}
+
+

@@ -1,0 +1,79 @@
+    
+
+
+    // font-weight: bolder;
+    // padding-bottom: getPadding(3);
+
+
+
+    // &--mediano{
+
+    //     font-size: getSize("m3");
+
+
+
+
+    // }
+    .c-titulo {
+       
+
+        @each $name, $var in $titulo-sizes {
+        
+            &--size-#{$name}{
+
+                font-size: $var;
+            
+            }
+                @media (min-width: 576px){
+                    &--size-#{$name}\@movil{
+
+                    font-size: $var;
+                
+                }
+            }
+
+                @media (min-width: 768px){
+                    &--size-#{$name}\@tablet{
+    
+                        font-size: $var;
+                    
+                    }
+                }
+
+                @media (min-width: 992px){
+                    &--size-#{$name}\@desktop{
+        
+                            font-size: $var;
+                        
+                        }
+            }
+        }
+           
+    
+
+           
+
+
+    }
+
+
+     
+      
+    // @media (min-width: 576px) {
+    //     .c-titulo {
+    //         font-size: 50px;
+    //     }
+    // }
+      
+    // @media (min-width: 768px) {
+    //     .c-titulo {
+    //         font-size: 55px;
+    //     }
+    // }
+      
+    // @media (min-width: 992px) {
+    //     .c-titulo {
+    //         font-size: 70px;
+    //     }
+    // }
+

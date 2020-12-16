@@ -1,0 +1,45 @@
+.l-page{
+
+    // margin-left: 12%;
+    // margin-right: 12%;
+
+    &__header{
+
+        padding-bottom: getPadding(6);
+        padding-left:12% ;
+        padding-right:12% ;
+
+
+
+    }
+
+    &__main{
+
+
+        
+        background-color: inherit;
+        padding-top: getPadding(6);
+        padding-bottom: getPadding(7);
+        margin-left: 12% ;
+        margin-right: 12% ; 
+        
+
+
+
+
+    }
+
+
+    &__footer{
+        border-top: 10px solid getColor("default", 5);
+        background-color: getColor("blanco",6);
+        padding-top: getPadding(6);
+        padding-left:12% ;
+        padding-right:12%;
+
+
+
+    }
+
+    
+}

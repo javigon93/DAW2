@@ -1,0 +1,27 @@
+.l-page{
+
+    display: grid;
+    
+    grid-template-areas:
+                  "cabecera cabecera cabecera cabecera cabecera"
+                  "left-navigation left-navigation contenido contenido contenido"
+                  "pie pie pie pie pie";
+
+
+    &--switch{
+
+
+        grid-template-areas:
+            "cabecera cabecera cabecera cabecera cabecera"
+            "contenido contenido contenido left-navigation left-navigation"
+            "pie pie pie pie pie";
+
+        
+
+
+    }
+
+
+
+
+}

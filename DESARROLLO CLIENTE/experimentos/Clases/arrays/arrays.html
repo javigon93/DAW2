@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <h2>Arrays de Objetos</h2>
+
+    <button onclick="notasAlumno()">Notas de un alumno</button><br>
+    <p>
+
+        <button onclick="subeUnPunto()">Subir un punto en cada asignatura</button><br>
+    <p>
+
+        <button onclick="alumnosCiudad()">Buscar alumnos de una ciudad</button>
+        <button onclick="alumnosCurso()">Buscar alumnos de un curso</button><br>
+    <p>
+
+        <button onclick="ordenaEdad()">Ordenar alumnos por edad</button>
+        <button onclick="ordenaNombreAsc()">Ordenar alumnos por nombre ascendente</button>
+        <button onclick="ordenaNombreDesc()">Ordenar alumnos por nombre descendente</button><br>
+    <p>
+
+        <button onclick="borraAlumno()">Borrar alumno</button><br>
+    <p>
+
+        <button onclick="nuevoAlumno()">Nuevo alumno</button>
+        <button onclick="nuevaAsignatura()">Nueva asignatura</button>
+
+
+
+        <script>
+            "use strict"
+
+
+
+            let alumnos = [{
+                "codigo": "DAW-1-2020",
+                "nombre": "Pepe",
+                "ciudad": "Valencia",
+                'calificaciones': [{ 'asignatura': 'PRG', 'nota': 9 },
+                { 'asignatura': 'GBD', 'nota': 6 },
+                { 'asignatura': 'ING', 'nota': 4 },
+                { 'asignatura': 'FOL', 'nota': 3 }
+                ],
+                'edad': 24
+            },
+            {
+                'codigo': 'DAW-2-2020',
+                'nombre': 'Juan',
+                'ciudad': 'Castellon',
+                'calificaciones': [{ 'asignatura': 'DWC', 'nota': 4 },
+                { 'asignatura': 'DWS', 'nota': 6 },
+                { 'asignatura': 'DAW', 'nota': 7 },
+                { 'asignatura': 'DIW', 'nota': 8 },
+                { 'asignatura': 'ING', 'nota': 9 },
+                { 'asignatura': 'EIE', 'nota': 2 }
+                ],
+                'edad': 28
+            },
+            {
+                'codigo': 'DAW-1-2019',
+                'nombre': 'Ana',
+                'ciudad': 'Valencia',
+                'calificaciones': [{ 'asignatura': 'PRG', 'nota': 6 },
+                { 'asignatura': 'GBD', 'nota': 2 },
+                { 'asignatura': 'ING', 'nota': 6 },
+                { 'asignatura': 'FOL', 'nota': 2 }
+                ],
+                'edad': 22
+            },
+            {
+                'codigo': 'DAW-2-2020',
+                'nombre': 'Maria',
+                'ciudad': 'Castellon',
+                'calificaciones': [{ 'asignatura': 'DWC', 'nota': 4 },
+                { 'asignatura': 'DWS', 'nota': 6 },
+                { 'asignatura': 'DAW', 'nota': 7 },
+                { 'asignatura': 'DIW', 'nota': 8 },
+                { 'asignatura': 'ING', 'nota': 4 },
+                { 'asignatura': 'EIE', 'nota': 1 }
+                ],
+                'edad': 30
+            }
+            ];
+
+
+            // Pedirá mediante un prompt el nombre de un alumno, si el alumno no existe mostrará por la
+            // consola un mensaje de error.
+            // Si el alumno existe mostrara por consola su nota media y la mejor nota obtenida con el
+            // nombre su asignatura y la peor nota obtenida con el nombre de su asignatura.
+
+
+
+            function notasAlumno() {
+
+
+                let nombreAlumno = prompt('Introduce el nombre del Alumno');
+
+                let indice_alumno = alumnos.findIndex(item => item.nombre == nombreAlumno);
+
+
+                if (indice_alumno != -1) {
+
+                    let calificaciones = alumnos[indice_alumno].calificaciones;
+                    let nota = 0;
+                    let notaAlta = 0;
+                    let notaBaja = 10;
+                    let info_nota_Baja = {};
+                    let info_nota_Alta = {};
+
+
+                    
+                    calificaciones.forEach(calificacion => {
+
+                        let notaAsignatura = calificacion.nota;
+                        nota += calificacion.nota;
+
+                        if (notaAsignatura > notaAlta) {
+                            notaAlta = notaAsignatura;
+
+                            info_nota_Alta = {
+
+                                asignatura: calificacion.asignatura,
+                                calificacion: calificacion.nota
+
+
+                            }
+
+
+                        }
+
+                        else if (notaAsignatura < notaBaja) {
+
+                            notaBaja = notaAsignatura;
+                            info_nota_Baja = {
+
+                                asignatura: calificacion.asignatura,
+                                calificacion: calificacion.nota
+
+
+                            }
+                        }
+
+
+
+
+
+                    });
+
+
+                    let notaMedia = nota / (calificaciones.length);
+
+                    let output = `Alumno: ${nombreAlumno} Nota Media: ${notaMedia} \n Nota más baja: ${info_nota_Baja.calificacion} Asignatura: ${info_nota_Baja.asignatura} \n 
+                        Nota más alta: ${info_nota_Alta.calificacion} Asignatura: ${info_nota_Alta.asignatura} `;
+
+                    alert(output);
+
+
+                }
+
+                else {
+
+                    alert("no se encuentra al alumno");
+
+                }
+
+
+            }
+
+            function subeUnPunto() {
+
+                alumnos.forEach(element => {
+
+                    let notas_alumno = element['calificaciones'];
+
+
+                    notas_alumno.forEach(element => {
+
+                        element.nota = element.nota + 1;
+
+                        if (element.nota > 10) {
+
+                            element.nota = 10;
+                        }
+
+                    });
+
+                });
+
+                console.log(alumnos);
+
+
+
+
+
+            }
+
+            function alumnosCiudad(){
+
+                let ciudad= prompt('introduce la ciudad a buscar');
+                let respuesta= ``;
+
+
+
+                let alumnosFiltrados = alumnos.filter(alumno => alumno.ciudad == ciudad);
+
+                alumnosFiltrados.forEach(alumno => {
+                    
+                     respuesta+= `Alumno: ${alumno.nombre} Ciudad: ${alumno.ciudad} \n`;
+
+
+
+                });
+               
+                alert(respuesta);
+
+
+            }
+
+            function alumnosCurso(){
+
+
+                let curso= prompt('introduce el curso a buscar');
+                let respuesta= ``;
+
+
+
+                let alumnosFiltrados = alumnos.filter(alumno => alumno.codigo == curso);
+
+                alumnosFiltrados.forEach(alumno => {
+                    
+                    respuesta+= `Alumno: ${alumno.nombre} Ciudad: ${alumno.codigo} \n`;
+
+
+
+               });
+              
+               alert(respuesta);
+
+
+            }
+
+            function ordenaEdad(){
+
+
+
+
+
+
+
+
+
+            }
+
+
+        </script>
+</body>
+
+</html>

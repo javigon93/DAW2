@@ -1,0 +1,23 @@
+.g--margin-top{
+
+
+    @for $numero from -5 to 21 {
+        
+        &--#{$numero}{
+    
+            margin-top: getMargin(#{$numero}) ;
+           
+    
+    
+        }
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    }

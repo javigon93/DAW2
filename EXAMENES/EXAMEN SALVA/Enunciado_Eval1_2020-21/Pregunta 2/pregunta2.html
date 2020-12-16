@@ -1,0 +1,176 @@
+<html>
+
+<head>
+	<script>
+
+		window.addEventListener('load', alcargar);
+		function alcargar() {
+
+			imagenes = document.getElementsByTagName('img');
+			botonCarrito = document.getElementById('boton');
+			
+
+			Array.from(imagenes).forEach(imagen => {
+
+				imagen.addEventListener('click', articuloNuevo);
+
+
+
+			});
+
+			botonCarrito.addEventListener('click', verCarrito);
+			carrito = new Carrito("25/11/2020", 1234)
+		}
+
+			class Carrito {
+
+				numero = null;
+				fecha = null;
+
+				articulos=[];
+
+
+
+
+				constructor(fecha, numero) {
+
+					this.fecha = fecha;
+					this.numero = numero;
+
+					this.articulos = [
+									{}	];
+
+
+				}
+
+
+				ponArticulo(articuloInsertado) {
+
+					let articuloExistente = articulos.findIndex(articulo => articulo.codigo == articuloInsertado.codigo);
+
+					if (articuloExistente == -1) {
+						articulos.push(articulo);
+					}
+
+					else {
+
+						articulos[articuloExistente].unidades++;
+
+
+
+					}
+
+
+
+
+
+				}
+
+
+				totalCarrito() {
+
+					PrecioFinal = 0;
+					articulos.forEach(articulo => {
+
+						operacion = articulo.precio * articulo.unidades;
+
+						PrecioFinal += operacion;
+					
+					});
+
+					return PrecioFinal;
+
+
+				}
+
+
+
+			}
+
+			
+
+
+			//--------------------------------------Clase Carrito ---------------------------------------------
+			//Incluye los métodos:
+			//constructor
+			//ponArticulo
+			//totalCarrito
+
+
+
+
+
+
+
+
+			//--------------------- Funciones para asociar al hacer click en las fotos y al hacer click en 'Ver Carrito'
+
+			//funcion para el evento onclick de las imagenes
+
+			
+			function articuloNuevo() {
+
+				infoProducto = this.name;
+
+
+
+
+				infoSeparada = infoProducto.split('|');
+
+				
+
+				jsonCreado = {
+
+
+					codigo: infoSeparada[0],
+					descripcion: infoSeparada[1],
+					precio: infoSeparada[2],
+					unidades: 1
+
+
+				}
+				carrito.ponArticulo(jsonCreado);
+
+
+			}
+
+			//funcion para el evento onclick del boton ver carrito
+			function verCarrito() {
+
+				console.log(articulos);
+				consolole.log(carrito.totalCarrito());
+			}
+
+
+
+
+
+
+		
+
+
+	</script>
+</head>
+
+<body>
+	<center>
+		<img src="portatil.png" id="portatil" name="Articulo1|Portatil|550">
+		<img src="disco.png" id="disco" name="Articulo2|Disco|80">
+		<img src="tablet.png" id="tablet" name="Articulo3|Tablet|480">
+
+		<br><br>
+
+		<a id="boton" href="#">Ver Carrito</a>
+
+	</center>
+</body>
+
+
+<script>
+
+
+
+
+</script>
+
+</html>

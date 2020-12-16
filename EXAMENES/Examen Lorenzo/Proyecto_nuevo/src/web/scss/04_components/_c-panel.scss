@@ -1,0 +1,33 @@
+
+
+.c-panel{
+
+    border: getBorderWidth("xl") solid getColor("verde",2);
+    
+
+    &__titulo{
+
+
+        font-weight: bold;
+        font-size: larger;
+        text-decoration: underline;
+            &--noUnderLine{
+
+                text-decoration: none;
+
+
+            }
+
+    }
+
+    &__contenido{
+
+
+        font-size: medium;
+
+
+    }
+
+
+
+}

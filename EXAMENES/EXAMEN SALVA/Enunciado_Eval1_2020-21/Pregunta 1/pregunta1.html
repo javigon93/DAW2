@@ -1,0 +1,181 @@
+<html>
+	<head>
+		<style>
+			.imagencss{position:absolute; top:150px; left:400px}
+		</style>
+	
+		<script>
+
+			pizzas=[{'codigo':'P0',
+					 'nombre':'--- Selecciona una Pizza ---',
+					 'ingredientes':[]
+					},
+					{'codigo':'P1',
+					 'nombre':'Prosciutto', 
+					 'ingredientes':[{'ingrediente':'salsa de tomate','precio':'0.5'},
+									 {'ingrediente':'mozzarella','precio':'0.5'},
+									 {'ingrediente':'jamón york','precio':'0.75'}
+								    ]
+					},
+					{'codigo':'P2',
+					 'nombre':'Capricciosa',
+					 'ingredientes':[{'ingrediente':'salsa de tomate','precio':'0.5'},
+									 {'ingrediente':'mozzarella','precio':'0.5'},
+									 {'ingrediente':'jamón york','precio':'0.75'},
+									 {'ingrediente':'alcachofas','precio':'1'},
+									 {'ingrediente':'champiñones','precio':'0.5'},
+									 {'ingrediente':'olivas negras','precio':'0.25'}
+								    ]
+					},								   
+					{'codigo':'P3',
+					 'nombre':'Cuatro Formaggi',
+					 'ingredientes':[{'ingrediente':'salsa de tomate','precio':'0.5'},
+									 {'ingrediente':'mozzarella','precio':'0.5'},
+									 {'ingrediente':'gorgonzola','precio':'1.25'},
+									 {'ingrediente':'emmemtal','precio':'1'},
+									 {'ingrediente':'brie','precio':'0.75'}
+								    ]
+					}
+				   ];
+								   
+		</script>
+	</head>
+	
+	<body>
+		<br>
+		<select id="lista" onchange="actualizarPagina(this)">
+		</select>
+		
+		<div id="fotopizza">
+		
+		</div>
+		<h3>Ingredientes:</h3>
+		<div id="ingredientes">
+		
+		</div>
+		<h2 id="importe">Importe :</h2>
+
+
+		<script>
+			window.addEventListener('load', alCargar);
+
+
+			function alCargar(){
+
+
+				elementoSelect= document.getElementById('lista');
+				
+
+				
+
+				pizzas.forEach(pizza => {
+					
+					elementoOption=document.createElement('option');
+					elementoOption.value=pizza.codigo;
+					elementoOption.text=pizza.nombre;
+					
+
+					elementoSelect.appendChild(elementoOption);
+					
+				});
+
+
+				elementoImporte=document.getElementById('importe');
+				elementoImporte.innerHTML= "Importe : 0";
+				
+				
+				
+
+
+			}
+
+			function actualizarPagina(elemento){
+				elementoSelect=elemento;
+				valorSeleccionado=elementoSelect.options[elementoSelect.selectedIndex].value;
+				
+				elementoIngredientes=document.getElementById('ingredientes');
+				
+
+				
+				precioTotal=0;
+
+				contenedorIngredientes=document.getElementById('ingredientes');
+				contenedorFoto=document.getElementById('fotopizza');
+
+				
+				contenedorFoto.removeChild[0];
+
+				let pizzaSeleccionada = pizzas.find(item => item.codigo == valorSeleccionado);
+				
+				fotoPizza=document.createElement('img');
+				fotoPizza.id=`fotoPizza`;
+				fotoPizza.src=`${pizzaSeleccionada.codigo}.jpg`;
+				fotoAntigua=document.getElementById('fotoPizza');
+
+
+				if ( fotoAntigua != null) {
+					
+					contenedorFoto.replaceChild(fotoPizza,fotoAntigua );
+
+
+				}
+				
+				
+				
+				
+				
+				ingredientes= pizzaSeleccionada.ingredientes;
+				contador=0;
+				ingredientes.forEach(ingredientePizza => {
+						contador++;
+						ingredienteAntiguo=document.getElementById('ingrediente'+contador);
+						elementoIngrediente=document.createElement('p');
+						elementoIngrediente.id='ingrediente'+ contador;
+						elementoIngrediente.innerHTML= ingredientePizza.ingrediente;
+						precioTotal+= parseFloat(ingredientePizza.precio);
+
+						if (ingredienteAntiguo != null) {
+							contenedorIngredientes.replaceChild(elementoIngrediente, ingredienteAntiguo);
+						}
+						contenedorIngredientes.appendChild(elementoIngrediente);
+
+				});
+
+				contenedorIngredientes.
+
+				elementoImporte=document.getElementById('importe');
+				importeActualizado= document.createElement('h2');
+				importeActualizado.id=elementoImporte.id;
+				importeActualizado.innerHTML=`Importe : ${precioTotal +5}`
+				
+				contenedorFoto.appendChild(fotoPizza);
+				elementoImporte.parentNode.replaceChild(importeActualizado, elementoImporte);
+			
+			}
+
+
+
+
+			function obtenerValorNumerico(frase){
+
+				string=frase;
+				numero=string.substring(9);
+
+				return numero;
+
+
+			}
+
+
+
+
+
+		</script>
+
+
+
+
+
+
+	</body>
+</html>

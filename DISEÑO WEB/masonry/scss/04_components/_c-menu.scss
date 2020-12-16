@@ -1,0 +1,22 @@
+.c-menu{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    
+
+    &__item{
+
+        padding-right:getPadding(6) ;
+        padding-left: getPadding(6);
+        font-size: getSize("m2");
+
+
+
+    }
+
+
+    
+
+}

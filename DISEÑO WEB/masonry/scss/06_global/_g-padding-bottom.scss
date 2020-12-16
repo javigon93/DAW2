@@ -1,0 +1,22 @@
+.g--padding-bottom{
+
+
+    @for $var from 1 to 21 {
+        
+        &--#{$var}{
+
+            padding-bottom: getPadding(#{$var});
+
+
+
+
+
+        }
+
+
+
+    }
+
+
+
+}

@@ -1,0 +1,33 @@
+// 01
+
+@import "./01_utilities/functions/gets";
+@import "./01_utilities/variables/tamanos";
+@import "./01_utilities/variables/colores";
+
+
+
+
+
+// 02
+@import "./02_base/reset.scss";
+// 03
+
+@import "./03_layout/l-page";
+@import "./03_layout/l-extremos";
+@import "./03_layout/l-columnas";
+
+
+// 04
+@import "./04_components/c-boton";
+@import "./04_components/c-panel";
+
+// 05
+
+// 06
+
+@import "./06_global/g--border-width-s";
+@import "./06_global/g--border-width-m";
+@import "./06_global/g--border-width-l";
+@import "./06_global/g--border-width-xl";
+@import "./06_global/g--border-width-xxl";
+

@@ -1,0 +1,28 @@
+.c-boton{
+    width: 100px;
+    background-color: getColor("azul",3);
+    border: getBorderWidth("l") solid getColor("azul", 5);
+    color: getColor("blanco",1);
+    margin: 10px;
+    width: 10%;
+    &--secundario{
+
+        background: getColor("blanco",1);
+        color:getColor("negro",1);
+
+
+
+    }
+
+
+    &--alternativo{
+
+        background-color: getColor("verde",2) ;
+        color: getColor("verde",5);
+        border-color: getColor("verde",6);
+
+
+
+    }
+
+}
