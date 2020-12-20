@@ -8,6 +8,7 @@ import {Profesor} from "./Modelos/profesor";
 })
 export class AppComponent {
   title = 'k ase';
+  valorPadre:string="Paso del padre al hijo";
   profe1!: Profesor;
 
   profesores:Array<Profesor>=[{
