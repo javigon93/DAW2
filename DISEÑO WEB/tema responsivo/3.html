@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        html {
+            font-size: 24px;
+        }
+
+        .cuadrado_azul {
+            display: inline-block;
+            border: 2px solid blue;
+            width: clamp(100px,10vw,800px);
+            height: clamp(100px,10vw,800px);
+            font-size: 20px;
+
+        }
+
+
+
+
+        .cuadrado_verde {
+            display: inline-block;
+            border: 2px solid green;
+            width: min(800px,10vw);
+            height: min(800px,10vh);
+
+        }
+
+
+
+        .cuadrado_rojo {
+            
+            width: max(100px,10vw);
+            height: max(100px,10vh);
+
+            display: inline-block;
+            border: 2px solid red;
+            
+           
+
+
+        }
+        .cuadrado_rosa {
+            display: inline-block;
+            border: 2px solid pink;
+            width: calc(50vw + 20px);
+            height: calc(50vh + 20px);
+
+
+
+
+        }
+        .cuadrado_amarillo {
+            display: inline-block;
+            border: 2px solid yellow;
+            width: clamp(100px, calc(50vw + 20px),600px);
+            height: clamp(100px,calc(50vh + 20px),600px);
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="cuadrado_rojo">
+
+    </div>
+    <div class="cuadrado_verde">
+
+    </div>
+    <div class="cuadrado_azul">
+
+    </div>
+    <div class="cuadrado_rosa">
+
+    </div>
+    <div class="cuadrado_amarillo">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

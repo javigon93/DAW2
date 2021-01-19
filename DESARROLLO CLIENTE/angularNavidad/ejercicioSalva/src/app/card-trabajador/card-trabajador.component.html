@@ -1,0 +1,30 @@
+<div class="col mb-6">
+
+  <div class="card h-100">
+
+    <div class="view overlay">
+      <img class="card-img-top" src=" assets/{{trabajador.foto}}  " alt="Card image cap">  <!-- completar src con la foto del _input -->
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!--Title-->
+      <h4 class="card-title">  {{trabajador.nombre}} </h4>   <!-- Mostrar nombre del _input -->
+      <h4> {{trabajador.cargo}}</h4>                     <!-- Mostrar cargo del _input -->
+      <!--Text-->
+      <p class="card-text">Votos: {{trabajador.votos}}      <!-- Mostrar votos del _input -->
+        <img src="/assets/like.jpg" (click)="like(trabajador)">     <!-- Mostrar en src imagen like.jpg   y llamar a funcion like   con el id del _input -->
+        <img src="/assets/unlike.jpg" (click)="dislike(trabajador)">     <!-- Mostrar en src imagen unlike.jpg y llamar a funcion unlike con el id del _input -->
+      </p>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-danger" (click)="eliminar(trabajador)">Borrar Trabajador</button> <!--llamar a funcion eliminar con el id del _input -->
+    </div>
+
+  </div>
+  <!-- Card -->
+</div>

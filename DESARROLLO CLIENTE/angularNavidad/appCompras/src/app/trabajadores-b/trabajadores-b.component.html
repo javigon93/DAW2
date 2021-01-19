@@ -1,0 +1,27 @@
+
+<h3>Trabajadores de la Empresa</h3>
+<button class="btn-primary" (click)=nuevo()>Nuevo Trabajador</button>
+<table class="table table-bordered table-striped tabla"
+ style="margin-top: 40px;">
+ <thead>
+ <tr class="filters">
+ <th>Foto</th>
+ <th>Nombre</th>
+ <th>Cargo</th>
+ <th>Acción</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let trabajador of trabajadores">
+  <td><img src="/assets/{{trabajador.foto}}"></td>
+ <td>{{ trabajador.nombre }}</td>
+ <td>{{ trabajador.cargo }}</td>
+ <td>Opciones:
+  <button class="btn-primary" (click)=ver(trabajador)>Ver</button>
+  <button class="btn-warning" (click)=modificar(trabajador)>Modificar Cargo</button>
+  <button class="btn-danger" (click)=deleteTrabajador(trabajador)>Borrar</button>
+ </td>
+ </tr>
+ </tbody>
+</table>
+
